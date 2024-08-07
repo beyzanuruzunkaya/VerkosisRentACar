@@ -1,0 +1,75 @@
+﻿@model Arac
+@{
+    ViewData["Title"] = "CreateCar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yeni Araç Girişi</h4>
+                        <p class="card-subtitle mb-4">
+                            Araç ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra kaydet
+                            butonuna tıklayarak işlemi tamamlayabilirsiniz.
+                        </p>
+                        <form method="post" asp-action="CreateCar">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Marka</label>
+                                <input type="text" class="form-control" id="exampleInputMarka" asp-for=Marka>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputModel">Model</label>
+                                <input type="text" class="form-control" id="exampleInputModel" asp-for=Model>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputKilometer">Kilometre</label>
+                                <input type="text" class="form-control" id="exampleInputKilometer" asp-for="Kilometre">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputTransmission">Vites Türü</label>
+                                <div>
+                                    <input type="radio" id="manual" name="VitesTuru" value=true asp-for="VitesTuru">
+                                    <label for="manual">Manuel</label>
+                                </div>
+                                <div>
+                                    <input type="radio" id="automatic" name="VitesTuru" value=false asp-for="VitesTuru">
+                                    <label for="automatic">Otomatik</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputSeat">Koltuk Sayısı</label>
+                                <input type="number" class="form-control" id="exampleInputSeat" asp-for="KoltukSayisi">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputFuel">Yakıt Türü</label>
+                                <input type="text" class="form-control" id="exampleInputFuel" asp-for="YakitTuru">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleInputFuel">Arac Yılı</label>
+                                <input type="text" class="form-control" id="exampleInputYıl" asp-for="Yıl">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="exampleInputFuel">Ucret</label>
+                                <input type="text" class="form-control" id="exampleInputUcret" asp-for="Ucret">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Aracı Kaydet</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/VerkosisRentACar.styles.css" asp-append-version="true" />
+    <style>
+        /* Navbar içindeki tüm bağlantıları sağa yaslamak için */
+        .navbar-nav {
+            margin-left: auto; /* Sağ hizalama */
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,11 +28,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <!-- Sağdaki bağlantılar -->
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Login">Giriş Yap</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Egitim">Egitim</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Signup">Kayıt Ol</a>
                         </li>
                     </ul>
                 </div>

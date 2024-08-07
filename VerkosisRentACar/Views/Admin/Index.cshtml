@@ -1,0 +1,64 @@
+﻿@model List<Arac>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Araba Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Arabalar ile ilgili ekleme, kaldırma, güncelleme işlemlerini burdan yönetebilirsiniz.
+                        </p>
+
+                        <table id="complex-header-datatable" class="table dt-responsive nowrap">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Marka</th>
+                                    <th>Model</th>
+                                    <th>Yıl</th>
+                                    <th>Kilometre</th>
+                                    <th>Vites Türü</th>
+                                    <th>Yakıt Türü</th>
+                                    <th>Koltuk Sayısı</th>
+                                    <th>Fiyat Bilgileri</th>
+                                    <th>Sil</th>
+                                    <th>Güncelle</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Marka</td>
+                                        <td>@item.Model</td>
+                                        <td>@item.Yıl</td>
+                                        <td>@item.Kilometre</td>
+                                        <td>@item.VitesTuru</td>
+                                        <td>@item.YakitTuru</td>
+                                        <td>@item.KoltukSayisi</td>
+                                        <td>@item.Ucret</td>
+                                        <td>
+                                            <a asp-controller="Admin" asp-action="RemoveCar" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a>
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/UpdateCar/@item.Id" class="btn btn-outline-success">Güncelle</a>
+                                        </td>
+                                        
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/Admin/CreateCar/" class="btn btn-outline-primary">Yeni Araç Girişi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
