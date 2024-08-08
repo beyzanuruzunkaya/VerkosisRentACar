@@ -26,6 +26,7 @@
                                     <th>Yakıt Türü</th>
                                     <th>Koltuk Sayısı</th>
                                     <th>Fiyat Bilgileri</th>
+                                    <th>Uygunluk Durumu</th>
                                     <th>Sil</th>
                                     <th>Güncelle</th>
                                 </tr>
@@ -42,6 +43,7 @@
                                         <td>@item.YakitTuru</td>
                                         <td>@item.KoltukSayisi</td>
                                         <td>@item.Ucret</td>
+                                        <td>@item.Uygun</td>
                                         <td>
                                             <a asp-controller="Admin" asp-action="RemoveCar" asp-route-id="@item.Id" class="btn btn-outline-danger">Sil</a>
                                         </td>

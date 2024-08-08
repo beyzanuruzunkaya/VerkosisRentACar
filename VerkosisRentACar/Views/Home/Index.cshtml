@@ -1,8 +1,59 @@
-﻿@{
+﻿@model List<Arac>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Beyzanur Uzunkaya</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Araba Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Arabalar ile ilgili ekleme, kaldırma, güncelleme işlemlerini burdan yönetebilirsiniz.
+                        </p>
+
+                        <table id="complex-header-datatable" class="table dt-responsive nowrap">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Marka</th>
+                                    <th>Model</th>
+                                    <th>Yıl</th>
+                                    <th>Kilometre</th>
+                                    <th>Vites Türü</th>
+                                    <th>Yakıt Türü</th>
+                                    <th>Koltuk Sayısı</th>
+                                    <th>Fiyat Bilgileri</th>
+                                    <th>Kirala</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Marka</td>
+                                        <td>@item.Model</td>
+                                        <td>@item.Yıl</td>
+                                        <td>@item.Kilometre</td>
+                                        <td>@item.VitesTuru</td>
+                                        <td>@item.YakitTuru</td>
+                                        <td>@item.KoltukSayisi</td>
+                                        <td>@item.Ucret</td>
+                                        <td>
+                                            <a asp-controller="Home" asp-action="Kirala" asp-route-carid="@item.Id" asp-route-userid ="@ViewBag.UserId" class="btn btn-outline-danger">Kirala</a>
+                                        </td>
+                                        <td>
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

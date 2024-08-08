@@ -9,5 +9,17 @@ namespace VerkosisRentACar.VeriErisim.Concrete
         public UyeRepository(RentACarDbContext context) : base(context)
         {
         }
+
+        public int GetIdByEMail(string EMail)
+        {
+            Uye uye = _context.Uyeler.Where(x => x.EMail == EMail).FirstOrDefault();
+            return uye.Id;
+        }
+
+        public bool IsUserExists(string EMail)
+        {
+            Uye uye = _context.Uyeler.Where(x => x.EMail == EMail).FirstOrDefault();
+            return uye != null;
+        }
     }
 }

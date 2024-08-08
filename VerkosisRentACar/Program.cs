@@ -1,4 +1,5 @@
 using VerkosisRentACar.Context;
+using VerkosisRentACar.Mapping;
 using VerkosisRentACar.VeriErisim.Abstract;
 using VerkosisRentACar.VeriErisim.Concrete;
 
@@ -9,6 +10,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<RentACarDbContext>();
 builder.Services.AddScoped<IAracRepository,AracRepository>();
+builder.Services.AddScoped<IUyeRepository,UyeRepository>();
+builder.Services.AddScoped<IKiralananAracRepository, KiralananAracrepository>();
+
+builder.Services.AddAutoMapper(typeof(RentMapping));
 
 var app = builder.Build();
 
